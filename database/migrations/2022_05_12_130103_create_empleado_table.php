@@ -23,6 +23,8 @@ return new class extends Migration
             $table->float('salario',12,2);
             $table->time('horarioInicio');
             $table->time('horarioSalida');
+            $table->unsignedBigInteger('commissions_id');
+            $table->foreign("commissions_id")->references("id")->on("commissions")->onDelete("cascade")->onUpdate("cascade");;
             $table->timestamps();
 
         });
